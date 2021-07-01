@@ -13,7 +13,7 @@
             <ns1:TransactionLocatorId>
               <%= transaction_locator_id %>
             </ns1:TransactionLocatorId>
-            <ns1:MessageOriginatorId>GSA</ns1:MessageOriginatorId>
+            <ns1:MessageOriginatorId></ns1:MessageOriginatorId>
             <ns1:MessageDestinationId></ns1:MessageDestinationId>
           </ns1:MessageAddress>
         </ns1:ControlData>
@@ -24,8 +24,17 @@
         <ns2:PersonName>
           <ns2:PersonGivenName></ns2:PersonGivenName>
           <ns2:PersonSurName></ns2:PersonSurName>
+          <ns2:PersonMiddleName></ns2:PersonMiddleName>
+          <ns2:PersonNameSuffixText></ns2:PersonNameSuffixText>
         </ns2:PersonName>
+        <ns1:DriverLicenseIssueDate></ns1:DriverLicenseIssueDate>
+        <ns1:DriverLicenseExpirationDate></ns1:DriverLicenseExpirationDate>
         <ns1:DocumentCategoryCode></ns1:DocumentCategoryCode>
+        <ns1:Address>
+          <ns2:LocationCityName></ns2:LocationCityName>
+          <ns2:LocationStateUSPostalServiceCode></ns2:LocationStateUSPostalServiceCode>
+          <ns2:LocationPostalCode></ns2:LocationPostalCode>
+        </ns1:Address>
       </ns:verifyDriverLicenseDataRequest>
     </ns:VerifyDriverLicenseData>
   </soap:Body>

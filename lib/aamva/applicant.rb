@@ -6,10 +6,17 @@ module Aamva
     def self.from_proofer_applicant(applicant)
       new(
         uuid: applicant[:uuid],
+        message_originator_id: applicant[:message_originator_id],
         first_name: applicant[:first_name],
         last_name: applicant[:last_name],
+        middle_name: applicant[:middle_name],
         dob: format_dob(applicant[:dob]),
         state_id_data: format_state_id_data(applicant),
+        issue_date: applicant[:issue_date],
+        expiration_date: applicant[:expiration_date], 
+        city: applicant[:city],
+        state: applicant[:state],
+        zip_code: applicant[:zip_code]
       )
     end
 

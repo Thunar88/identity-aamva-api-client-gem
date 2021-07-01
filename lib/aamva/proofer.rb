@@ -31,12 +31,19 @@ module Aamva
     vendor_name 'aamva:state_id'
 
     required_attributes :uuid,
-               :first_name,
-               :last_name,
-               :dob,
-               :state_id_number,
-               :state_id_type,
-               :state_id_jurisdiction
+                        :message_originator_id,
+                        :first_name,
+                        :last_name,
+                        :middle_name,
+                        :dob,
+                        :state_id_number,
+                        :state_id_type,
+                        :state_id_jurisdiction,
+                        :issue_date,
+                        :expiration_date,
+                        :city,
+                        :state,
+                        :zip_code
 
     stage :state_id
 
@@ -49,6 +56,7 @@ module Aamva
       unless response.success?
         response.verification_results.each do |attribute, v_result|
           result.add_error(attribute.to_sym, 'UNVERIFIED') if v_result == false
+          result.add_error(attribute.to_sym, 'VERIFIED') if v_result == true
           result.add_error(attribute.to_sym, 'MISSING') if v_result.nil?
         end
       end

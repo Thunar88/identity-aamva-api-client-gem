@@ -10,7 +10,7 @@ module Aamva
     class VerificationRequest
       CONTENT_TYPE = 'application/soap+xml;charset=UTF-8'.freeze
       DEFAULT_VERIFICATION_URL =
-        'https://verificationservices-cert.aamva.org:18449/dldv/2.1/online'.freeze
+        'https://verificationservices2-cert.aamva.org:18449/dldv/2.1/valuefree'.freeze
       SOAP_ACTION = '"http://aamva.org/dldv/wsdl/2.1/IDLDVService21/VerifyDriverLicenseData"'.freeze
 
       extend Forwardable
@@ -108,10 +108,18 @@ module Aamva
         {
           '//ns2:IdentificationID' => applicant.state_id_data.state_id_number,
           '//ns1:DocumentCategoryCode' => document_category_code,
+          '//ns1:MessageOriginatorId' => applicant.message_originator_id,
           '//ns1:MessageDestinationId' => message_destination_id,
           '//ns2:PersonGivenName' => applicant.first_name,
           '//ns2:PersonSurName' => applicant.last_name,
+          '//ns2:PersonMiddleName' => applicant.middle_name,
+          '//ns2:PersonNameSuffixText' => applicant.suffix,
+          '//ns1:DriverLicenseIssueDate' => applicant.issue_date,
+          '//ns1:DriverLicenseExpirationDate' => applicant.expiration_date,
           '//ns1:PersonBirthDate' => applicant.dob,
+          '//ns2:LocationCityName' => applicant.city,
+          '//ns2:LocationStateUSPostalServiceCode' => applicant.state,
+          '//ns2:LocationPostalCode' => applicant.zip_code
         }
       end
       # rubocop:enable Metrics/MethodLength, Metrics/AbcSize
