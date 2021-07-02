@@ -10,6 +10,12 @@ module Aamva
         'PersonBirthDateMatchIndicator' => :dob,
         'PersonLastNameExactMatchIndicator' => :last_name,
         'PersonFirstNameExactMatchIndicator' => :first_name,
+        'PersonMiddleNameExactMatchIndicator' => :middle_name,
+        'DriverLicenseIssueDateMatchIndicator' => :issue_date,
+        'DriverLicenseExpirationDateMatchIndicator' => :expiration_date,
+        'AddressCityMatchIndicator' => :city,
+        'AddressStateCodeMatchIndicator' => :state,
+        'AddressZIP5MatchIndicator' => :zip_code
       }.freeze
 
       REQUIRED_VERIFICATION_ATTRIBUTES = %i[
@@ -17,6 +23,13 @@ module Aamva
         dob
         last_name
         first_name
+        middle_name
+        state_id_jurisdiction
+        issue_date
+        expiration_date
+        city
+        state
+        zip_code
       ].freeze
 
       attr_reader :verification_results, :transaction_locator_id

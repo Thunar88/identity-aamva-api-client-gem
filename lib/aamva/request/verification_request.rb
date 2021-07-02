@@ -118,7 +118,7 @@ module Aamva
           '//ns1:DriverLicenseExpirationDate' => applicant.expiration_date,
           '//ns1:PersonBirthDate' => applicant.dob,
           '//ns2:LocationCityName' => applicant.city,
-          '//ns2:LocationStateUSPostalServiceCode' => applicant.state,
+          '//ns2:LocationStateUsPostalServiceCode' => applicant.state,
           '//ns2:LocationPostalCode' => applicant.zip_code
         }
       end
