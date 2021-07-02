@@ -24,7 +24,6 @@ module Aamva
         last_name
         first_name
         middle_name
-        state_id_jurisdiction
         issue_date
         expiration_date
         city
