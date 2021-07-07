@@ -11,6 +11,7 @@ module Aamva
         'PersonLastNameExactMatchIndicator' => :last_name,
         'PersonFirstNameExactMatchIndicator' => :first_name,
         'PersonMiddleNameExactMatchIndicator' => :middle_name,
+        'PersonNameSuffixMatchIndicator' => :suffix,
         'DriverLicenseIssueDateMatchIndicator' => :issue_date,
         'DriverLicenseExpirationDateMatchIndicator' => :expiration_date,
         'AddressCityMatchIndicator' => :city,
@@ -24,6 +25,7 @@ module Aamva
         last_name
         first_name
         middle_name
+        suffix
         issue_date
         expiration_date
         city
